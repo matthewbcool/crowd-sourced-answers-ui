@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   TextInput
 } from "react-native"
+import Card from "./components/Card"
 
 export default class App extends Component {
   constructor(props) {
@@ -14,7 +15,21 @@ export default class App extends Component {
     this.state = {
       text: "",
       toggleListView: false,
-      data: ""
+      data: [
+        {
+          key: "",
+          answers: [
+            {
+              answer: "",
+              votes: 0
+            },
+            {
+              answer: "",
+              votes: 0
+            }
+          ]
+        }
+      ]
     }
   }
 
@@ -65,22 +80,6 @@ export default class App extends Component {
         },
         {
           key:
-            "It’s snowing like crazy ! Hopefully I can fly out tomorrow for my standby that is at 3pm BUT if my flight is cancelled, what should I do ? Should I message my manager now and give her a heads up ?",
-          answers: [
-            {
-              answer:
-                " Yes, just let your manager know. It’s out of your control",
-              votes: 0
-            },
-            {
-              answer:
-                "surely the commuter policy will kick in. take the time to read up on it and document everything. I'm not sure how a full fare ticket would fit in the commuter policy, but one FF ticket should trump two non rev flights.",
-              votes: 0
-            }
-          ]
-        },
-        {
-          key:
             "Does anyone have any ideas as to why the bid results for Dec or not in Jetnet/Flt Svc?",
           answers: [
             {
@@ -106,6 +105,7 @@ export default class App extends Component {
           }}>
           <Text>{this.state.text}</Text>
         </TextInput>
+        <Card data={this.state.data} />
         {this.state.toggleListView ? (
           <View style={styles.listView}>
             <FlatList
