@@ -1,9 +1,11 @@
 import React from "react"
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native"
+import VotingArrows from "./VotingArrows"
 
 const Card = props => {
   return (
     <View style={styles.mainCard}>
+      <VotingArrows />
       <TouchableOpacity onPress={props.handleTouch}>
         <Text style={styles.questionText}>{props.data}</Text>
       </TouchableOpacity>
@@ -15,11 +17,11 @@ export default Card
 
 const styles = StyleSheet.create({
   mainCard: {
-    marginVertical: 10,
-    marginHorizontal: 5,
+    flexDirection: "row",
+    height: 150,
+    marginBottom: 10,
     paddingTop: 2,
     paddingBottom: 2,
-    paddingLeft: 10,
     paddingRight: 10,
     borderWidth: 2.5,
     borderRadius: 4,
