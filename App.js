@@ -14,7 +14,7 @@ export default class App extends Component {
     super(props)
     this.state = {
       text: "",
-      toggleListView: false,
+      toggleListView: true,
       data: [
         {
           key: "",
@@ -99,18 +99,17 @@ export default class App extends Component {
           placeholder="Ask a question"
           onChangeText={text => {
             this.setState({ text })
-            if (this.state.text.length > 5) {
+            if (this.state.text.length) {
               this.setState({ toggleListView: true })
             }
           }}>
           <Text>{this.state.text}</Text>
         </TextInput>
-        <Card data={this.state.data} />
         {this.state.toggleListView ? (
           <View style={styles.listView}>
             <FlatList
               data={this.state.data}
-              renderItem={({ item }) => <Text>{item.key}</Text>}
+              renderItem={({ item }) => <Card data={item.key} />}
             />
           </View>
         ) : null}
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#fcc"
+    backgroundColor: "#fff"
   },
   listView: {},
   questionInput: {
