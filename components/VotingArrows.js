@@ -16,8 +16,11 @@ const VotingArrows = props => {
 
 const styles = StyleSheet.create({
   voteArrowContainer: {
-    backgroundColor: "grey",
-    width: 20
+    backgroundColor: "#eaeaea",
+    width: 30,
+    marginBottom: -3,
+    marginTop: -3,
+    marginRight: 5
   }
 })
 

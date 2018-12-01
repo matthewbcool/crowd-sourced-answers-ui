@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     paddingBottom: 2,
     paddingRight: 10,
-    borderWidth: 2.5,
+    borderWidth: 3,
     borderRadius: 4,
-    borderColor: "rgba(0, 0, 0, 0.2)"
+    borderColor: "#eaeaea"
   },
   questionText: {
     fontSize: 20
