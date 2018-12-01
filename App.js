@@ -19,16 +19,7 @@ export default class App extends Component {
       data: [
         {
           key: "",
-          answers: [
-            {
-              answer: "",
-              votes: 0
-            },
-            {
-              answer: "",
-              votes: 0
-            }
-          ]
+          answers: []
         }
       ]
     }
@@ -51,7 +42,7 @@ export default class App extends Component {
           placeholder="Ask a question"
           onChangeText={text => {
             this.setState({ text })
-            if (this.state.text.length) {
+            if (this.state.text.length > 5) {
               this.setState({ toggleListView: true })
             }
           }}>
