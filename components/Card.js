@@ -5,7 +5,7 @@ import VotingArrows from "./VotingArrows"
 const Card = props => {
   return (
     <View style={styles.mainCard}>
-      <VotingArrows />
+      <VotingArrows numberOfVotes={props.numberOfVotes} />
       <TouchableOpacity onPress={props.handleTouch}>
         <Text style={styles.questionText}>{props.data}</Text>
       </TouchableOpacity>

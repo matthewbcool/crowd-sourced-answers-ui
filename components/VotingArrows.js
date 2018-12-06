@@ -1,5 +1,11 @@
 import React from "react"
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native"
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableHighlight,
+  Text
+} from "react-native"
 import Icon from "react-native-vector-icons/Feather"
 
 const VotingArrows = props => {
@@ -18,7 +24,9 @@ const VotingArrows = props => {
   return (
     <View style={styles.voteArrowContainer}>
       <TouchableOpacity>{upVote}</TouchableOpacity>
-      <Text>5</Text>
+      <View style={styles.voteNumberBox}>
+        <Text>5</Text>
+      </View>
       <TouchableOpacity>{downVote}</TouchableOpacity>
     </View>
   )
@@ -37,6 +45,10 @@ const styles = StyleSheet.create({
   },
   voteArrows: {
     paddingRight: 5
+  },
+  voteNumberBox: {
+    borderColor: "#900",
+    borderWidth: 10
   }
 })
 
